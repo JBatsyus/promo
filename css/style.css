@@ -2657,9 +2657,9 @@ ul {
     display: flex;
     align-items: center;
     gap: 10px;
-    cursor: pointer;
+
     user-select: none;
-    cursor: pointer;
+
 }
 
 .promo-form__checkbox-input {
@@ -2905,6 +2905,12 @@ ul {
     .promo-form__agreements {
         margin-bottom: 24px;
     }
+}
+
+.promo-form__checkbox-label {
+
+    align-items: flex-start;
+
 }
 
 /* ------------------ ФОРМА END------------------- */
