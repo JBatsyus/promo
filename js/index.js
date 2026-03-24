@@ -2,59 +2,66 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // плавный скролл
     $("a.scroll-to").on("click", function (e) {
         e.preventDefault();
-        let anchor = $(this).attr('href');
-        $('html, body').stop().animate({
-            scrollTop: $(anchor).offset().top
-        }, 500);
+        let anchor = $(this).attr("href");
+        $("html, body")
+            .stop()
+            .animate({
+                    scrollTop: $(anchor).offset().top,
+                },
+                500,
+            );
     });
 
     //вычисляем ширину экрана
     const windowWidth = window.screen.width;
 
     // вычисление переменных ширины контейнера и экрана, передача их в css
-    const container = document.querySelector('.container');
-    const wrapper = document.querySelector('.wrapper');
+    const container = document.querySelector(".container");
+    const wrapper = document.querySelector(".wrapper");
     if (container && wrapper) {
         const containerWidth = container.offsetWidth;
         const wrapperWidth = wrapper.offsetWidth;
-        document.documentElement.style.setProperty('--js-container-width', containerWidth + "px");
-        document.documentElement.style.setProperty('--js-wrapper-width', wrapperWidth + "px");
+        document.documentElement.style.setProperty(
+            "--js-container-width",
+            containerWidth + "px",
+        );
+        document.documentElement.style.setProperty(
+            "--js-wrapper-width",
+            wrapperWidth + "px",
+        );
     }
     // табы
-    $('._js-tabs-title').on('click', function () {
-        let tabAttr = $(this).attr('data-tab'),
-            tabInfo = $('._js-tabs-info[data-tab= \'' + tabAttr + '\']');
-        $(this).addClass('active').siblings().removeClass('active');
-        tabInfo.addClass('active').siblings().removeClass('active');
+    $("._js-tabs-title").on("click", function () {
+        let tabAttr = $(this).attr("data-tab"),
+            tabInfo = $("._js-tabs-info[data-tab= '" + tabAttr + "']");
+        $(this).addClass("active").siblings().removeClass("active");
+        tabInfo.addClass("active").siblings().removeClass("active");
     });
-
 
     // обработка инпутов
-    $(".input").on('focus', function () {
-        $(this).closest(".input__wrap").addClass('active');
+    $(".promo-form__input").on("focus", function () {
+        $(this).closest(".promo-form__field-group").addClass("active");
     });
 
-    $(".input").on('blur', function () {
-        $(this).closest(".input__wrap").removeClass('active');
-
+    $(".promo-form__input").on("blur", function () {
+        $(this).closest(".promo-form__field-group").removeClass("active");
     });
-
 
     window.addEventListener("scroll", function () {
-    const header = document.querySelector(".header");
+        const header = document.querySelector(".header");
 
-    if (window.scrollY > 50) {
-        header.classList.add("header--scrolled");
-    } else {
-        header.classList.remove("header--scrolled");
-    }
-});
+        if (window.scrollY > 50) {
+            header.classList.add("header--scrolled");
+        } else {
+            header.classList.remove("header--scrolled");
+        }
+    });
 
     // МОБИЛЬНОЕ МЕНЮ
     const burger = document.querySelector(".burger");
     const menu = document.querySelector(".menu-mob");
     const body = document.body;
-    const main = document.querySelector('main');
+    const main = document.querySelector("main");
 
     // 1. Логика открытия/закрытия бургера
     if (burger && menu) {
@@ -62,7 +69,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             const isActive = burger.classList.toggle("is-active");
             menu.classList.toggle("is-active");
             body.classList.toggle("no-scroll", isActive);
-            main.classList.toggle('is-hidden');
+            main.classList.toggle("is-hidden");
         });
 
         // 2. Логика клика по ссылкам (включая скролл)
@@ -99,28 +106,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 
-
     // Инициализация Swiper
     // Слайдер Конверсии
-    const conversionSwiper = new Swiper('.conversion-block__swiper', {
+    const conversionSwiper = new Swiper(".conversion-block__swiper", {
         slidesPerView: 1.01,
         spaceBetween: 12,
         grabCursor: true,
         speed: 600,
         loop: true,
         navigation: {
-            nextEl: '.conversion-block__arrow--next',
-            prevEl: '.conversion-block__arrow--prev',
+            nextEl: ".conversion-block__arrow--next",
+            prevEl: ".conversion-block__arrow--prev",
         },
 
         breakpoints: {
             480: {
                 slidesPerView: 1.4,
-
             },
             675: {
                 slidesPerView: 2.001,
-
             },
             1024: {
                 slidesPerView: 2.1,
@@ -132,10 +136,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             },
         },
 
-
         a11y: {
-            prevSlideMessage: 'Предыдущий слайд',
-            nextSlideMessage: 'Следующий слайд',
+            prevSlideMessage: "Предыдущий слайд",
+            nextSlideMessage: "Следующий слайд",
         },
     });
 
@@ -148,27 +151,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
         breakpoints: {
             576: {
                 slidesPerView: 2,
-                spaceBetween: 12
+                spaceBetween: 12,
             },
             768: {
                 slidesPerView: 3,
-                spaceBetween: 16
+                spaceBetween: 16,
             },
         },
     });
 
     var swiperBase = new Swiper(".about-company__swiper-base", {
         spaceBetween: 0,
-        effect: 'fade',
+        effect: "fade",
         fadeEffect: {
-            crossFade: true
+            crossFade: true,
         },
         slidesPerView: 1,
         thumbs: {
             swiper: swiperBullet,
         },
     });
-
 
     // слайдер Клиенты
     const swiperClients = new Swiper(".clients-slider", {
@@ -184,7 +186,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
         pagination: {
             el: ".swiper-pagination",
-            clickable: true
+            clickable: true,
         },
     });
     /* слайдер с рейтингом на Главной (места премии...) */
@@ -206,10 +208,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
         breakpoints: {
             250: {
-                slidesPerView: 'auto',
+                slidesPerView: "auto",
                 slidesPerGroupAuto: true,
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: ".swiper-pagination",
                     clickable: true,
                 },
             },
@@ -223,36 +225,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
             },
             1300: {
                 slidesPerView: 4,
-            }
-        }
+            },
+        },
     });
-
-
-
 
     var swiper = new Swiper(".number-slider__swiper", {
         slidesPerView: 1,
         spaceBetween: 20,
         loop: true,
-        effect: 'fade',
+        effect: "fade",
         fadeEffect: {
-            crossFade: true
+            crossFade: true,
         },
         speed: 1000,
         autoplay: {
             delay: 3000,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true
+            pauseOnMouseEnter: true,
         },
         autoHeight: false,
     });
 
     // Инициализация Swiper
-    const promoSlider = new Swiper('.promo-landing__slider', {
+    const promoSlider = new Swiper(".promo-landing__slider", {
         slidesPerView: 1,
         spaceBetween: 0,
         speed: 600,
-        effect: 'fade',
+        effect: "fade",
         observer: true,
         observeParents: true,
         watchSlidesProgress: true,
@@ -261,36 +260,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
             prevEl: ".promo-landing__arrow--prev",
         },
         fadeEffect: {
-            crossFade: true
+            crossFade: true,
         },
         autoHeight: true,
-
-
     });
 
-
-
     // Логика табов
-    const tabs = document.querySelectorAll('.tabs__tab');
+    const tabs = document.querySelectorAll(".tabs__tab");
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
             // Убираем активный класс со всех табов
-            tabs.forEach(t => {
-                t.classList.remove('tabs__tab--active');
-                t.setAttribute('aria-selected', 'false');
+            tabs.forEach((t) => {
+                t.classList.remove("tabs__tab--active");
+                t.setAttribute("aria-selected", "false");
             });
 
             // Добавляем активный класс нажатому табу
-            tab.classList.add('tabs__tab--active');
-            tab.setAttribute('aria-selected', 'true');
+            tab.classList.add("tabs__tab--active");
+            tab.setAttribute("aria-selected", "true");
 
             // Получаем значение data-tab
-            const tabValue = tab.getAttribute('data-tab');
+            const tabValue = tab.getAttribute("data-tab");
 
             // Переключаем слайд
             const targetSlideIndex = Array.from(promoSlider.slides).findIndex(
-                slide => slide.getAttribute('data-slide') === tabValue
+                (slide) => slide.getAttribute("data-slide") === tabValue,
             );
 
             if (targetSlideIndex !== -1) {
@@ -300,60 +295,64 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // Синхронизация: если слайд меняется, обновляем табы
-    promoSlider.on('slideChange', () => {
+    promoSlider.on("slideChange", () => {
         const activeIndex = promoSlider.activeIndex;
         const activeSlide = promoSlider.slides[activeIndex];
-        const slideValue = activeSlide.getAttribute('data-slide');
+        const slideValue = activeSlide.getAttribute("data-slide");
 
-        tabs.forEach(tab => {
-            tab.classList.remove('tabs__tab--active');
-            tab.setAttribute('aria-selected', 'false');
+        tabs.forEach((tab) => {
+            tab.classList.remove("tabs__tab--active");
+            tab.setAttribute("aria-selected", "false");
 
-            if (tab.getAttribute('data-tab') === slideValue) {
-                tab.classList.add('tabs__tab--active');
-                tab.setAttribute('aria-selected', 'true');
+            if (tab.getAttribute("data-tab") === slideValue) {
+                tab.classList.add("tabs__tab--active");
+                tab.setAttribute("aria-selected", "true");
             }
         });
     });
 
-
-
-    gsap.registerPlugin(ScrollTrigger, TextPlugin)
-
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
     const tl = gsap.timeline({
         defaults: {
             duration: 1.5,
-            ease: "power3.out"
-        }
+            ease: "power3.out",
+        },
     });
 
-    tl
-        .from(".hero__image-block:first-child", {
+    tl.from(".hero__image-block:first-child", {
             y: 300,
-            opacity: 0
+            opacity: 0,
         })
-        .from(".hero__image-block:last-child", {
-            y: -300,
-            opacity: 0
-        }, "<")
+        .from(
+            ".hero__image-block:last-child", {
+                y: -300,
+                opacity: 0,
+            },
+            "<",
+        )
 
         // 2. Плавное появление белого фона самого блока
         // Убираем прозрачность у всего контейнера
-        .from(".hero__info", {
-            opacity: 0,
-            y: 20,
-            duration: 1
-        }, "-=1") // Начинается чуть раньше окончания анимации картинок
+        .from(
+            ".hero__info", {
+                opacity: 0,
+                y: 20,
+                duration: 1,
+            },
+            "-=1",
+        ) // Начинается чуть раньше окончания анимации картинок
 
         // 3. Появление текста внутри по очереди (Stagger)
-        .from(".hero__info > *", {
-            opacity: 0,
-            y: 20,
-            duration: 0.8,
-            stagger: 0.15
-        }, "-=0.5"); // Накладывается на появление фона
-
+        .from(
+            ".hero__info > *", {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                stagger: 0.15,
+            },
+            "-=0.5",
+        ); // Накладывается на появление фона
 
     // карточки Особенности
 
@@ -370,15 +369,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //     ease: "power2.out"
     // });
 
-
-
     // --- Код для анимации стандартного заголовка (section-header) ---
-    gsap.utils.toArray('.section-header').forEach(header => {
+    gsap.utils.toArray(".section-header").forEach((header) => {
         // Анимация kicker
-        const kicker = header.querySelector('.section-header__kicker');
+        const kicker = header.querySelector(".section-header__kicker");
         // Анимация заголовка
-        const title = header.querySelector('.section-header__title');
-
+        const title = header.querySelector(".section-header__title");
 
         const headerTl = gsap.timeline({
             scrollTrigger: {
@@ -387,30 +383,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 start: "top 80%",
                 end: "top center",
                 // markers: true
-            }
+            },
         });
 
         if (kicker) {
-            headerTl.from(kicker, {
-                duration: 0.8,
-                opacity: 0,
-                y: 20,
-                force3D: false,
-                ease: "power2.out",
-            }, 0);
+            headerTl.from(
+                kicker, {
+                    duration: 0.8,
+                    opacity: 0,
+                    y: 20,
+                    force3D: false,
+                    ease: "power2.out",
+                },
+                0,
+            );
         }
 
         if (title) {
-            headerTl.from(title, {
-                duration: 0.8,
-                opacity: 0,
-                y: 30,
-                force3D: false,
-                ease: "power2.out",
-            }, "-=0.5");
+            headerTl.from(
+                title, {
+                    duration: 0.8,
+                    opacity: 0,
+                    y: 30,
+                    force3D: false,
+                    ease: "power2.out",
+                },
+                "-=0.5",
+            );
         }
-
-
     });
     // gsap.utils.toArray('.gsap-block').forEach(block => {
     //     gsap.from(block, {
@@ -429,8 +429,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //     });
     // });
 
-
-
     // --- Анимация футера ---
     gsap.utils.toArray(".footer__column").forEach((col, i) => {
         gsap.from(col, {
@@ -440,9 +438,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             ease: "power2.out",
             scrollTrigger: {
                 trigger: ".footer",
-                start: "top 95%"
+                start: "top 95%",
             },
-            delay: i * 0.3
+            delay: i * 0.3,
         });
     });
 
@@ -454,68 +452,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ease: "power2.out",
         scrollTrigger: {
             trigger: ".footer__bottom",
-            start: "top 98%"
-        }
-    });
-
-    // --- Управление плавающим блоком (floating-guide) ---
-    // Появляется при достижении .digital-tools, уходит перед .footer
-
-    gsap.set(".floating-guide", {
-        opacity: 0,
-        display: "block"
-    });
-
-    ScrollTrigger.create({
-        trigger: ".digital-tools", // Секция, после которой появляется
-        start: "top 80%",
-        onEnter: () => {
-            gsap.to(".floating-guide", {
-                opacity: 1,
-                duration: 0.5,
-                ease: "power2.out"
-            });
+            start: "top 98%",
         },
-        onLeaveBack: () => {
-            gsap.to(".floating-guide", {
-                opacity: 0,
-                duration: 0.5, // Плавное исчезновение
-                ease: "power2.out",
-            });
-        },
-
     });
-
-    ScrollTrigger.create({
-        trigger: ".footer", // Секция, перед которой скрывается
-        start: "top 99%",
-        onEnter: () => {
-            gsap.to(".floating-guide", {
-                opacity: 0,
-                duration: 0.5,
-                ease: "power2.out",
-
-            });
-        },
-        // Если надо, чтобы снова появился при прокрутке
-        // onLeaveBack: () => {
-        //     gsap.to(".floating-guide", {
-        //         opacity: 1,
-        //         duration: 0.5, 
-        //         ease: "power2.out"
-        //     });
-        // }
-    });
-    ScrollTrigger.refresh();
-
 
     // mask phone
     $(function () {
-        $("#input-phone").mask("+7 (999) 999 - 99 - 99");
+        $("#phone").mask("+7 (999) 999 - 99 - 99");
     });
-
-
-
-
-
 });

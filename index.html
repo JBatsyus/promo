@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="./plugins/jquery.fancybox.min.css" />
     <link rel="stylesheet" type="text/css" href="./plugins/animate.min.css" />
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
-    <!-- <link rel="stylesheet" href="/plugins/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./plugins/animate.min.css" />
@@ -44,11 +43,10 @@
                 <a href="https://vbi.ru/" class="header__logo logo">
                     <img src="./img/logo-vbi.svg" loading="lazy" alt="VBI - логотип компании" width="156" height="40" />
                 </a>
-
                 <nav class="header__nav nav" aria-label="Главная навигация">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="/" class="nav__link nav__link--active">Главная</a>
+                            <a href="#hero" class="nav__link nav__link--active">Главная</a>
                         </li>
                         <li class="nav__item">
                             <a href="#features" class="nav__link">Особенности</a>
@@ -63,7 +61,7 @@
                             <a href="#conversion" class="nav__link">Конверсии</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#calculation" class="nav__link">Расчет</a>
+                            <a href="#form" class="nav__link">Расчет</a>
                         </li>
                         <li class="nav__item">
                             <a href="#rating" class="nav__link">Рейтинг</a>
@@ -75,9 +73,9 @@
                 </nav>
 
                 <div class="header__actions">
-                    <button type="button" class="header__btn btn btn--primary" data-modal="callback">
+                    <a href="#form" class="header__btn button-base">
                         ЗАКАЗАТЬ ЗВОНОК
-                    </button>
+                    </a>
                     <button class="header__burger burger" type="button" aria-label="Открыть меню" aria-expanded="false">
                         <span class="burger__line"></span>
                         <span class="burger__line"></span>
@@ -93,7 +91,7 @@
             <nav class="menu-mob__menu" aria-label="Мобильное меню">
                 <ul class="menu-mob__menu-list">
                     <li class="menu-mob__menu-item">
-                        <a href="#home" class="menu-mob__menu-link">Главная</a>
+                        <a href="#hero" class="menu-mob__menu-link">Главная</a>
                     </li>
                     <li class="menu-mob__menu-item">
                         <a href="#features" class="menu-mob__menu-link">Особенности</a>
@@ -108,7 +106,7 @@
                         <a href="#conversion" class="menu-mob__menu-link">Конверсии</a>
                     </li>
                     <li class="menu-mob__menu-item">
-                        <a href="#calculation" class="menu-mob__menu-link">Расчет</a>
+                        <a href="#form" class="menu-mob__menu-link">Расчет</a>
                     </li>
                     <li class="menu-mob__menu-item">
                         <a href="#" class="menu-mob__menu-link">Рейтинг</a>
@@ -119,10 +117,9 @@
                 </ul>
             </nav>
             <div class="menu-mob__bottom">
-                <button type="button" class="menu-mob__phone-btn btn-text" data-title="Обратный звонок"
-                    data-btn="Отправить" data-micromodal-trigger="modal-1">
+                <a href="#form" class="menu-mob__phone-btn btn-text button-base">
                     Заказать звонок
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -131,7 +128,7 @@
 
     <main class="landimg-main">
         <!--— ГЛАВНАЯ START-->
-        <section class="hero section">
+        <section class="hero section" id="hero">
             <div class="hero__container container">
                 <div class="hero__block-top">
                     <div class="hero__content">
@@ -142,8 +139,7 @@
                                 клинике — конверсионный лендинг с проработанной логикой и
                                 дизайном, готовый за 24 часа.
                             </p>
-                            <a data-src="#guide-form" href="javascript:void(0);"
-                                class="hero__button button-base button-pink" data-fancybox data-fancybox="">Заказать
+                            <a href="#form" class="hero__button button-base button-pink">Заказать
                                 презентацию</a>
                         </div>
                         <div class="hero__image">
@@ -351,7 +347,7 @@
                                     <div class="promo-landing__actions">
                                         <a href="" class="button-base button-pink promo-landing__btn">Демо-просмотр</a>
 
-                                        <a href="" class="button-base button--outline promo-landing__btn">
+                                        <a href="#form" class="button-base button--outline promo-landing__btn">
                                             Оставить заявку
                                         </a>
                                     </div>
@@ -377,35 +373,68 @@
                                 <div class="promo-landing__info">
                                     <h3 class="promo-landing__subtitle">Для клиники</h3>
                                     <p class="promo-landing__description">
-                                        Комплексное решение для медицинских клиник любого
-                                        масштаба. Презентуйте все услуги, врачей и преимущества в
-                                        одном месте.
+                                        (когда сайта нет или он не используется как основной инструмент)<br>
+                                        Одностраничный формат для клиники без собственного сайта.
+                                        Подходит для небольших медицинских центров и частных клиник, которым важно
+                                        быстро представить услуги и организовать онлайн-запись без разработки
+                                        полноценного сайта.
+                                        Страница выполняет роль базового цифрового представительства клиники:
+                                        рассказывает об услугах, врачах и формате приёма, помогает пациенту
+                                        сориентироваться и оставить заявку.
+                                        <br><br>
+                                        Как используется этот формат
                                     </p>
 
                                     <ul class="promo-landing__features">
                                         <li class="promo-landing__feature">
                                             <span class="feature__text">
-                                                <strong>Многофункциональность:</strong> размещение
-                                                всех услуг, специалистов и акций
+                                                Клиника получает понятную и аккуратную страницу вместо отсутствия сайта
                                             </span>
                                         </li>
                                         <li class="promo-landing__feature">
                                             <span class="feature__text">
-                                                <strong>Удобная навигация:</strong> интуитивно
-                                                понятная структура для пациентов
+                                                Все основные услуги собраны в одном месте
                                             </span>
                                         </li>
                                         <li class="promo-landing__feature">
                                             <span class="feature__text">
-                                                <strong>Онлайн-запись:</strong> интеграция с системами
-                                                записи на прием
+                                                Пациенту легко понять, чем занимается клиника и как записаться
+                                            </span>
+                                        </li>
+                                        <li class="promo-landing__feature">
+                                            <span class="feature__text">
+                                                Страницу можно развивать и дополнять по мере роста клиники
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <p>Почему формат подходит небольшим клиникам></p>
+                                    <br>
+                                    <ul class="promo-landing__features">
+                                        <li class="promo-landing__feature">
+                                            <span class="feature__text">
+                                                Не требует сложной структуры и большого объёма контента
+                                            </span>
+                                        </li>
+                                        <li class="promo-landing__feature">
+                                            <span class="feature__text">
+                                                Легко поддерживать и обновлять
+                                            </span>
+                                        </li>
+                                        <li class="promo-landing__feature">
+                                            <span class="feature__text">
+                                                Может использоваться как временное или постоянное решение
+                                            </span>
+                                        </li>
+                                        <li class="promo-landing__feature">
+                                            <span class="feature__text">
+                                                Подходит как основа для дальнейшего масштабирования
                                             </span>
                                         </li>
                                     </ul>
 
                                     <div class="promo-landing__actions">
                                         <a href="" class="button-base button-pink promo-landing__btn">Демо-просмотр</a>
-                                        <a href="" class="button-base button--outline promo-landing__btn">
+                                        <a href="#form" class="button-base button--outline promo-landing__btn">
                                             Оставить заявку
                                         </a>
                                     </div>
@@ -427,36 +456,44 @@
                                 </div>
 
                                 <div class="promo-landing__info">
-                                    <h3 class="promo-landing__subtitle">Для услуги</h3>
+                                    <h3 class="promo-landing__subtitle">Одностраничный формат под конкретную медицинскую
+                                        услугу</h3>
                                     <p class="promo-landing__description">
-                                        Лендинг для продвижения конкретной медицинской услуги.
-                                        Максимальная конверсия за счет фокуса на одной процедуре.
+                                        Помогает сфокусировать внимание пациента на услуге и упростить путь к записи без
+                                        отвлекающих разделов.
+                                        Страница строится вокруг одной задачи: понятно рассказать об услуге, ответить на
+                                        ключевые вопросы и привести пациента к обращению.
+                                        Подходит для клиник и частных практик, которым важно управлять спросом на
+                                        отдельное направление.
                                     </p>
+                                    <p>Почему этот формат используют</p>
 
                                     <ul class="promo-landing__features">
                                         <li class="promo-landing__feature">
                                             <span class="feature__text">
-                                                <strong>Фокус на услуге:</strong> детальное описание
-                                                процедуры, показаний и результатов
+                                                Вся логика страницы выстроена вокруг одной услуги
                                             </span>
                                         </li>
                                         <li class="promo-landing__feature">
                                             <span class="feature__text">
-                                                <strong>Доверие:</strong> отзывы пациентов, фото
-                                                до/после, сертификаты
+                                                Пациент быстрее понимает, подходит ли ему предложение
                                             </span>
                                         </li>
                                         <li class="promo-landing__feature">
                                             <span class="feature__text">
-                                                <strong>Прозрачность:</strong> цены, этапы процедуры,
-                                                подготовка
+                                                Упрощается навигация и принятие решения
+                                            </span>
+                                        </li>
+                                        <li class="promo-landing__feature">
+                                            <span class="feature__text">
+                                                Легко обновлять и использовать как самостоятельный инструмент
                                             </span>
                                         </li>
                                     </ul>
 
                                     <div class="promo-landing__actions">
                                         <a href="" class="button-base button-pink promo-landing__btn">Демо-просмотр</a>
-                                        <a href="" class="button-base button--outline promo-landing__btn">
+                                        <a href="#form" class="button-base button--outline promo-landing__btn">
                                             Оставить заявку
                                         </a>
                                     </div>
@@ -585,7 +622,7 @@
                                         class="conversion-block__card-image" loading="lazy" width="400" height="255" />
                                 </figure>
 
-                                <a href="" class="conversion-block__card-btn button-base button-pink">
+                                <a href="#form" class="conversion-block__card-btn button-base button-pink">
                                     Оставить заявку
                                 </a>
                             </article>
@@ -610,7 +647,7 @@
                                         class="conversion-block__card-image" loading="lazy" width="400" height="255" />
                                 </figure>
 
-                                <a href="" class="conversion-block__card-btn button-base button-pink">
+                                <a href="#form" class="conversion-block__card-btn button-base button-pink">
                                     Оставить заявку
                                 </a>
                             </article>
@@ -636,7 +673,7 @@
                                         class="conversion-block__card-image" loading="lazy" width="400" height="255" />
                                 </figure>
 
-                                <a href="" class="conversion-block__card-btn button-base button-pink">
+                                <a href="#form" class="conversion-block__card-btn button-base button-pink">
                                     Оставить заявку
                                 </a>
                             </article>
@@ -661,7 +698,7 @@
                                         class="conversion-block__card-image" loading="lazy" width="400" height="255" />
                                 </figure>
 
-                                <a href="" class="conversion-block__card-btn button-base button-pink">
+                                <a href="#form" class="conversion-block__card-btn button-base button-pink">
                                     Оставить заявку
                                 </a>
                             </article>
@@ -672,7 +709,7 @@
         </section>
         <!-- CONVERSION END -->
         <!-- ФОРМА С ВЫБОРОМ БЛОКОВ START -->
-        <section class="promo-form-section section" id="calculation">
+        <section class="promo-form-section section" id="form">
             <div class="container">
                 <header class="section-header">
                     <p class="section-header__kicker section-header__kicker--with-logo">
@@ -1127,189 +1164,6 @@
         </div>
     </footer>
 
-    <!-- FORM START -->
-    <div class="section-form" id="guide-form" style="display: none">
-        <div class="container">
-            <div class="section-form__wrap">
-                <div class="row" id="original-form">
-                    <div class="mb-4 col-lg-1 mb-lg-0">
-                        <div class="contact-form__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M2 1C0.895431 1 0 1.89543 0 3V3.41355L7.51436 7.58819C7.81638 7.75598 8.18362 7.75598 8.48564 7.58819L16 3.41355V3C16 1.89543 15.1046 1 14 1H2ZM16 5.70147L9.45693 9.33651C8.55086 9.83988 7.44914 9.83988 6.54307 9.33651L0 5.70147V13C0 14.1046 0.895431 15 2 15H14C15.1046 15 16 14.1046 16 13V5.70147ZM2 12C2 11.4477 2.44772 11 3 11C3.55228 11 4 11.4477 4 12C4 12.5523 3.55228 13 3 13C2.44772 13 2 12.5523 2 12Z"
-                                    fill="white"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="contact-form__title">
-                            Заполните форму, чтобы бесплатно получить гайд
-                            по&nbsp;инструментам Ecommerce
-                        </div>
-                    </div>
-                    <div class="col-lg-6 offset-mb-1">
-                        <form class="contact-form" id="guid" method="post" enctype="multipart/form-data"
-                            action="javascript:void(0);">
-                            <div class="input__wrap">
-                                <label class="input__label" for="input-name"><span>Ваше имя</span></label>
-                                <input class="input" required name="NAME" type="text" value="" id="input-name"
-                                    inputmode="text" autocomplete="on" />
-                                <div class="input__error">Error message</div>
-                            </div>
-                            <div class="input__wrap">
-                                <label class="input__label" for="input-phone">
-                                    <span>Телефон</span></label>
-                                <input class="input" required name="PHONE" type="tel" placeholder="+7" value=""
-                                    id="input-phone" inputmode="tel" />
-                                <div class="input__error">Error message</div>
-                            </div>
-                            <div class="input__wrap">
-                                <label class="input__label" for="input-email">
-                                    <span>Почта</span></label>
-                                <input class="input" required name="EMAIL_FORMS" type="email" placeholder="mail"
-                                    id="input-email" value="" inputmode="email" />
-                                <div class="input__error">Error message</div>
-                            </div>
-                            <div class="input__wrap">
-                                <label class="input__label" for="input-company">
-                                    <span>Название компании</span></label>
-                                <input class="input" name="COMPANY" type="text" placeholder="Компания" value=""
-                                    id="input-company" inputmode="text" />
-                                <div class="input__error">Error message</div>
-                            </div>
-                            <input name="IBLOCK_SECTION_ID" type="hidden" value="39" />
-
-                            <input name="TYPE" type="hidden" value="Екомерс" />
-
-                            <input name="NAME_FORM" type="hidden" value="Гаид Екомерс" />
-
-                            <div class="checkbox__wrap">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" required="" />
-                                    <span class="custom-checkbox"></span>
-                                    <span class="checkbox-text">
-                                        Я ознакомлен(а) и согласен(сна) с условиями
-                                        <a href="/policy.pdf" target="_blank">
-                                            Политики конфиденциальности и обработки персональных
-                                            данных,</a>
-                                        размещённой на сайте.
-                                    </span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" required="" />
-                                    <span class="custom-checkbox"></span>
-                                    <span class="checkbox-text">
-                                        Я даю согласие на обработку моих персональных данных на
-                                        условиях, указанных в
-                                        <a href="/Согласие_пользователи.docx" target="_blank">
-                                            Согласии на обработку персональных данных
-                                        </a>
-                                        и в
-                                        <a href="/policy.pdf" target="_blank">Политике конфиденциальности.</a>
-                                    </span>
-                                </label>
-                            </div>
-                            <button class="btn btn-form button-orange" type="submit" name="send">
-                                Отправить
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <!-- успешный успех -->
-                <div class="row" id="guide-success">
-                    <div class="mb-4 col-lg-1 mb-lg-0">
-                        <div class="contact-form__icon">
-                            <img src="./img/download.svg" loading="lazy" alt="" />
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="contact-form__title">
-                            Материал доступен для&nbsp;скачивания!
-                        </div>
-                        <div class="contact-form__subtitle">
-                            <span id="js-name"></span>, выберите удобный способ получения
-                            материала
-                        </div>
-                    </div>
-                    <div class="col-lg-6 offset-mb-1">
-                        <!-- Блок "Получить материалы" -->
-                        <div class="success-options">
-                            <a href="https://t.me/VBI_smart_bot?start=c1763733902527-ds" class="option-item">
-                                <div class="option-icon">
-                                    <img src="./img/tgb.svg" loading="lazy" alt="" />
-                                </div>
-                                <div class="option-text">
-                                    <div class="option-text__title">
-                                        Получить материалы в Telegram-боте
-                                    </div>
-                                    <span class="option-text__subtitle">Бот направит вам материалы для скачивания</span>
-                                </div>
-                                <div class="option-action-btn">
-                                    <img src="./img/right.svg" loading="lazy" alt="" />
-                                </div>
-                            </a>
-                            <form id="formGaidSend" class="option-item" method="post" enctype="multipart/form-data"
-                                action="javascript:void(0);">
-                                <input type="hidden" name="sessid" id="sessid"
-                                    value="73084cff62a052c1aa914d2f956fc167" />
-                                <input type="hidden" name="METHOD" value="SEND_FORM_GAID" />
-                                <input type="hidden" name="EMAIL" value="" />
-                                <div class="option-icon">
-                                    <img src="./img/email.svg" loading="lazy" alt="" />
-                                </div>
-                                <div class="option-text">
-                                    <div class="option-text__title">
-                                        Отправить материалы на почту
-                                    </div>
-                                    <span class="option-text__subtitle">Материалы придут вам на почту</span>
-                                </div>
-                                <div class="option-action-btn">
-                                    <img src="./img/right.svg" loading="lazy" alt="" />
-                                </div>
-                                <div class="resoult"></div>
-                            </form>
-                        </div>
-
-                        <!-- Блок "Подпишитесь на наши каналы" -->
-                        <div class="success-subscribe">
-                            <div class="success-subscribe__header">
-                                <h4>Подпишитесь на&nbsp;наши&nbsp;каналы</h4>
-                                <p>Следите за новостями и полезными материалами</p>
-                            </div>
-                            <a href="https://t.me/vbi_agency" class="option-item" target="_blank">
-                                <div class="option-icon">
-                                    <img src="./img/tgk.svg" loading="lazy" alt="" />
-                                </div>
-                                <div class="option-text">
-                                    <div class="option-text__title">Telegram-канал</div>
-                                    <span class="option-text__subtitle">Подпишитесь и будьте в курсе последних
-                                        событий</span>
-                                </div>
-                                <div class="option-action-btn">
-                                    <img src="./img/right.svg" loading="lazy" alt="" />
-                                </div>
-                            </a>
-
-                            <a href="https://vk.com/vbi.agency" class="option-item" target="_blank">
-                                <div class="option-icon">
-                                    <img src="./img/vkg.svg" loading="lazy" alt="" />
-                                </div>
-                                <div class="option-text">
-                                    <div class="option-text__title">Группа Вконтакте</div>
-                                    <span class="option-text__subtitle">Подпишитесь и будьте в курсе последних
-                                        событий</span>
-                                </div>
-                                <div class="option-action-btn">
-                                    <img src="./img/right.svg" loading="lazy" alt="" />
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 
@@ -1334,7 +1188,7 @@
     <script src="./plugins/wow.min.js"></script>
     <script src="./plugins/jquery-3.4.1.min.js"></script>
     <script src="./plugins/jquery.fancybox.min.js"></script>
-    <script src="./plugins/bootstrap.js"></script>
+  
 
     <script src="./plugins/jquery.maskedinput.js"></script>
     <script src="./js/index.js"></script>
