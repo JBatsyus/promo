@@ -1,16 +1,27 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     // плавный скролл
-    $("a.scroll-to").on("click", function (e) {
-        e.preventDefault();
-        let anchor = $(this).attr("href");
-        $("html, body")
-            .stop()
-            .animate({
-                    scrollTop: $(anchor).offset().top,
-                },
-                500,
-            );
+    // $("a.scroll-to").on("click", function (e) {
+    //     e.preventDefault();
+    //     let anchor = $(this).attr("href");
+    //     $("html, body")
+    //         .stop()
+    //         .animate({
+    //                 scrollTop: $(anchor).offset().top,
+    //             },
+    //             500,
+    //         );
+    // });
+    $(window).on('scroll', function () {
+        let scrollDistance = $(window).scrollTop();
+        $('.section').each(function (i) {
+            if ($(this).offset().top - 100 <= scrollDistance) {
+                $('.nav__link').removeClass('nav__link--active');
+                let id = $(this).attr('id');
+                $(`.nav__link[href="#${id}"]`).addClass('nav__link--active');
+            }
+        });
     });
+
 
     //вычисляем ширину экрана
     const windowWidth = window.screen.width;
@@ -131,7 +142,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 spaceBetween: 16,
             },
             1279: {
-                slidesPerView: 3,
+                slidesPerView: 3.0001,
                 spaceBetween: 16,
             },
         },
@@ -255,6 +266,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         observer: true,
         observeParents: true,
         watchSlidesProgress: true,
+     
         navigation: {
             nextEl: ".promo-landing__arrow--next",
             prevEl: ".promo-landing__arrow--prev",
@@ -264,6 +276,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
         autoHeight: true,
     });
+    const scrollBlocks = document.querySelectorAll('.promo-landing__inner');
+
+    scrollBlocks.forEach(block => {
+        block.addEventListener('wheel', (e) => {
+            const delta = e.deltaY;
+            const contentHeight = block.scrollHeight;
+            const viewHeight = block.offsetHeight;
+            const scrollTop = block.scrollTop;
+
+            // Если скроллим вниз и мы не в самом низу, ИЛИ скроллим вверх и мы не в самом верху
+            if ((delta > 0 && scrollTop + viewHeight < contentHeight) || (delta < 0 && scrollTop > 0)) {
+                e.stopPropagation(); // Останавливаем событие, чтобы страница не дергалась
+            }
+        }, {
+            passive: false
+        });
+    });
+
 
     // Логика табов
     const tabs = document.querySelectorAll(".tabs__tab");
