@@ -51,7 +51,7 @@
 /*----------Общие (START)---------------------*/
 :root {
     --color-base: #1f1f1f;
-    --color-white: #ffffff;
+    --color-white: #ffff;
     --color-black: #000;
     --color-gray: #696969;
     --color-orange: #ff5a13;
@@ -182,8 +182,6 @@ a {
     color: inherit;
 }
 
-
-
 a[class] {
     text-decoration: none;
 }
@@ -285,14 +283,14 @@ ul {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    background: #f09;
+    background: var(--color-pink-base);
     color: var(--color-white);
     text-transform: uppercase;
 }
 
 .button-pink:hover {
     color: var(--color-white);
-    background: #f09;
+    background: var(--color-pink-base);
 }
 
 .button-bottom {
@@ -370,7 +368,7 @@ ul {
     padding-bottom: 48px;
     border-bottom: var(--border-header);
     margin-bottom: 40px;
-    color: #ffb200;
+    color: var(--color-yellow-base);
 }
 
 .section-header__kicker--with-vbi {
@@ -551,7 +549,6 @@ ul {
     width: 100px;
 }
 
-
 @media (max-width: 1024px) {
     .header__container {
         padding-block: 24px 32px;
@@ -564,8 +561,6 @@ ul {
     .header--scrolled .header__container-scroll {
         padding: 12px 24px;
     }
-
-
 }
 
 @media (max-width: 767px) {
@@ -596,7 +591,7 @@ ul {
     font-size: 18px;
     line-height: 1.2;
     letter-spacing: 0.01em;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .header--scrolled .header__nav {
@@ -623,7 +618,7 @@ ul {
 
 .nav__link:hover,
 .nav__link--active {
-    color: #ffb200;
+    color: var(--color-yellow-base);
     /* text-shadow:
         0.5px 0 0 white,
         -0.5px 0 0 white; */
@@ -633,13 +628,13 @@ ul {
     border-radius: 20px;
     padding-inline: 40px;
     height: 53px;
-    background: #fff;
+    background: var(--color-white);
     font-family: var(--font-family-base);
     font-weight: 500;
     font-size: 18px;
     line-height: 1.2;
     text-transform: uppercase;
-    color: #f09;
+    color: var(--color-pink-base);
     white-space: nowrap;
 }
 
@@ -688,7 +683,7 @@ ul {
     .burger__line {
         width: 23px;
         height: 3px;
-        background-color: #ffffff;
+        background-color: var(--color-white);
         border-radius: 2px;
         transition: all 0.4s ease;
         transform-origin: center;
@@ -776,7 +771,7 @@ ul {
     }
 
     .menu-mob__menu-item:hover {
-        color: #ffb200;
+        color: var(--color-yellow-base);
     }
 
     .menu-mob__menu-item:last-child {
@@ -796,8 +791,8 @@ ul {
         font-size: 18px;
 
         line-height: 1.2;
-        background: #fff;
-        color: #f09;
+        background: var(--color-white);
+        color: var(--color-pink-base);
     }
 
     /* ---------- МОБИЛЬНОЕ МЕНЮ END--------- */
@@ -922,7 +917,7 @@ ul {
 }
 
 .footer__link:hover {
-    color: #ffb200;
+    color: var(--color-yellow-base);
 }
 
 .footer__contact-info {
@@ -945,7 +940,7 @@ ul {
 }
 
 .footer__phone:hover {
-    color: #b1b1b1;
+    color: var(--color-yellow-base);
 }
 
 .footer__social-icons {
@@ -965,7 +960,7 @@ ul {
 }
 
 .footer__social-link:hover {
-    background: #b1b1b1;
+    background: var(--color-yellow-base);
 }
 
 .footer__social-link svg {
@@ -975,7 +970,7 @@ ul {
 }
 
 .footer__social-link:hover svg {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .footer__social-link svg {
@@ -996,7 +991,7 @@ ul {
 }
 
 .footer__policy:hover {
-    opacity: 0.8;
+    color: var(--color-yellow-base);
 }
 
 @media (max-width: 1279px) {
@@ -1162,7 +1157,6 @@ ul {
     .hero {
         height: max-content;
         min-height: max-content;
-
     }
 
     .hero__info {
@@ -1186,8 +1180,6 @@ ul {
     }
 
     .hero__content {
-
-
         min-height: 468px;
     }
 }
@@ -1381,7 +1373,7 @@ ul {
 
     line-height: 1.2;
 
-    color: #fff;
+    color: var(--color-white);
 }
 
 .features__card-text {
@@ -1402,12 +1394,12 @@ ul {
 
 .features__card--dark {
     background-color: #2a2a2a;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .features__card--pink {
     background: #e10087;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .features__card.features__card--icon {
@@ -1592,19 +1584,19 @@ ul {
 }
 
 .task-card:nth-child(1)::after {
-    background-image: url('../img/tasks/1.svg');
+    background-image: url("../img/tasks/1.svg");
 }
 
 .task-card:nth-child(2)::after {
-    background-image: url('../img/tasks/2.svg');
+    background-image: url("../img/tasks/2.svg");
 }
 
 .task-card:nth-child(3)::after {
-    background-image: url('../img/tasks/3.svg');
+    background-image: url("../img/tasks/3.svg");
 }
 
 .task-card:nth-child(4)::after {
-    background-image: url('../img/tasks/4.svg');
+    background-image: url("../img/tasks/4.svg");
 }
 
 .task-card__title {
@@ -1612,7 +1604,7 @@ ul {
     font-weight: 600;
     font-size: 24px;
     line-height: 1.2;
-    color: #fff;
+    color: var(--color-white);
     z-index: 2;
 }
 
@@ -1625,7 +1617,7 @@ ul {
 
     line-height: 1.4;
     letter-spacing: 0.01em;
-    color: #fff;
+    color: var(--color-white);
 }
 
 @media (max-width: 1119px) {
@@ -1790,14 +1782,11 @@ ul {
     height: 100%;
 }
 
-
 .conversion-block__card-btn {
     margin-top: 40px;
     padding: 20px 40px;
     height: 51px;
 }
-
-
 
 @media (max-width: 1024px) {
     .conversion-block__controls {
@@ -1858,7 +1847,7 @@ ul {
 
     line-height: 1.2;
     letter-spacing: 0.01em;
-    color: #fff;
+    color: var(--color-white);
     cursor: pointer;
     transition: all 0.4s ease;
     white-space: nowrap;
@@ -1871,9 +1860,8 @@ ul {
 }
 
 .tabs__tab.tabs__tab--active {
-    color: #ffb200;
-    border: 1px solid #ffb200;
-
+    color: var(--color-yellow-base);
+    border: 1px solid var(--color-yellow-base);
 }
 
 .promo-landing__slider .swiper-wrapper {
@@ -1956,12 +1944,11 @@ ul {
     overscroll-behavior: contain;
     /* Ключевое свойство: блокирует скролл страницы */
 
-
     touch-action: pan-y;
     max-height: 458px;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #ffb200 transparent;
+    scrollbar-color: var(--color-yellow-base) transparent;
 }
 
 .promo-landing__description {
@@ -2017,15 +2004,15 @@ ul {
 
 .button--outline {
     background: transparent;
-    color: #fff;
-    border: 1px solid #fff;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
 
     cursor: pointer;
     transition: all 0.4s ease;
 }
 
 .button--outline:hover {
-    border-color: #fff;
+    border-color: var(--color-white);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -2192,7 +2179,6 @@ ul {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     overflow: hidden;
-
 }
 
 .about-company__swiper-base .swiper-slide {
@@ -2221,11 +2207,10 @@ ul {
     width: 100%;
     cursor: pointer;
     transition: border 0.4s ease-in-out;
-
 }
 
 .about-company__swiper-bullet .swiper-slide-thumb-active {
-    border: 1px solid #ffb200;
+    border: 1px solid var(--color-yellow-base);
     border-radius: 24px;
 }
 
@@ -2238,15 +2223,13 @@ ul {
     flex-direction: column;
 }
 
-
-
 .pink {
     font-weight: 600;
-    color: #f09;
+    color: var(--color-pink-base);
 }
 
 .yellow-submarine {
-    color: #ffb200;
+    color: var(--color-yellow-base);
     font-weight: 500;
 }
 
@@ -2267,7 +2250,6 @@ ul {
     font-size: 28px;
     line-height: 1.4;
     margin: 0;
-
 }
 
 .about-company__info-link {
@@ -2285,6 +2267,9 @@ ul {
     margin-top: auto;
 }
 
+.about-company__info-link:hover {
+    border: 1px solid var(--color-yellow-base);
+}
 
 @media (max-width: 1024px) {
     .about-company__grid {
@@ -2304,7 +2289,6 @@ ul {
     .about-company__info {
         grid-column: span 1;
     }
-
 
     .about-company__card-label {
         font-size: 20px;
@@ -2328,12 +2312,8 @@ ul {
         overflow: visible;
     }
 
-
     .about-company__info-text h3 {
-
         font-size: 20px;
-
-
     }
 
     .about-company__info-text {
@@ -2341,11 +2321,7 @@ ul {
         line-height: 1.5;
         row-gap: 16px;
     }
-
-
 }
-
-
 
 /*---------- VBI (END)---------------------*/
 /*---------- AWARDS (START)---------------------*/
@@ -2426,7 +2402,7 @@ ul {
 
 .new_raiting_wrapper .item {
     position: relative;
-    background: #f3f3f3;
+    background: var(--color-black-05);
     max-width: 464px;
     width: 100%;
     border-radius: 20px;
@@ -2619,7 +2595,7 @@ ul {
     font-size: 40px;
     line-height: 1.1;
 
-    color: #fff;
+    color: var(--color-white);
 }
 
 .promo-form__subtitle {
@@ -2640,7 +2616,7 @@ ul {
 .promo-form__field-group {
     display: flex;
     position: relative;
-    background: #f3f3f3;
+    background: var(--color-black-05);
     border-radius: 16px;
     padding: 15px 24px 15px 24px;
     display: grid;
@@ -2654,8 +2630,7 @@ ul {
 }
 
 .promo-form__field-group.active {
-    border: 1px solid #ffb200;
-
+    border: 1px solid var(--color-yellow-base);
 }
 
 .promo-form__label {
@@ -2664,7 +2639,7 @@ ul {
     font-size: 16px;
 
     line-height: 1.2;
-    color: #1f1f1f;
+    color: var(--color-base);
 
     width: 100%;
     border-right: 1px solid #e9e9e9;
@@ -2680,14 +2655,14 @@ ul {
 }
 
 .promo-form__label-text {
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 14px;
 }
 
 .promo-form__input {
     width: 100%;
     border: none;
-    background: #f3f3f3;
+    background: var(--color-black-05);
 }
 
 .promo-form__agreements {
@@ -2704,7 +2679,6 @@ ul {
     gap: 10px;
 
     user-select: none;
-
 }
 
 .promo-form__checkbox-input {
@@ -2753,14 +2727,14 @@ ul {
 
 .promo-form__checkbox-text a,
 .promo-form__checkbox-text a:hover {
-    color: #f09;
+    color: var(--color-pink-base);
     text-decoration: none;
 }
 
 .promo-form__submit-btn {
     width: 100%;
     max-width: 342px;
-    background-color: #ffb200;
+    background-color: var(--color-yellow-base);
     cursor: pointer;
     border-radius: 999px;
 
@@ -2771,7 +2745,7 @@ ul {
     font-size: 16px;
 
     line-height: 1.5;
-    color: #1f1f1f;
+    color: var(--color-base);
 }
 
 .promo-form__card--right .promo-form__title {
@@ -2843,7 +2817,7 @@ ul {
     position: absolute;
     width: 14px;
     height: 14px;
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 50%;
     top: 3px;
     left: 3px;
@@ -2851,7 +2825,7 @@ ul {
 }
 
 .promo-form__switch-input:checked+.promo-form__switch-inner .promo-form__switch-thumb {
-    background-color: #ffb200;
+    background-color: var(--color-yellow-base);
 }
 
 .promo-form__switch-input:checked+.promo-form__switch-inner .promo-form__switch-thumb::after {
@@ -2953,9 +2927,7 @@ ul {
 }
 
 .promo-form__checkbox-label {
-
     align-items: flex-start;
-
 }
 
 /* ------------------ ФОРМА END------------------- */
