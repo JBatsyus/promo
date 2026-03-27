@@ -130,6 +130,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         grabCursor: true,
         speed: 600,
         loop: true,
+        freeMode: true,
+        speed: 5000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
         navigation: {
             nextEl: ".conversion-block__arrow--next",
             prevEl: ".conversion-block__arrow--prev",
@@ -164,6 +171,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         slidesPerView: 2.04,
         freeMode: true,
         watchSlidesProgress: true,
+        loop: true,
         breakpoints: {
             576: {
                 slidesPerView: 2,
@@ -182,6 +190,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         fadeEffect: {
             crossFade: true,
         },
+        loop: true,
         slidesPerView: 1,
         thumbs: {
             swiper: swiperBullet,

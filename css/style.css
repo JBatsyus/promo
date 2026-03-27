@@ -1664,6 +1664,7 @@ ul {
 .conversion-block__swiper .swiper-wrapper {
     align-items: stretch;
     /* Растягиваем все слайды по высоте самого высокого */
+       transition-timing-function: linear !important;
 }
 
 .section-header__main {
@@ -2231,21 +2232,14 @@ ul {
 
 .about-company__info {
     grid-column: 1/7;
-}
-
-.about-company__info {
     min-width: 0;
-}
-
-/* Информационная часть */
-
-.about-company__info {
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
 }
+
+
 
 .pink {
     font-weight: 600;
@@ -2299,6 +2293,9 @@ ul {
         grid-template-columns: 1fr;
         row-gap: 24px;
     }
+    .about-company__swiper::after{
+        inset: -15px;
+    }
 
     .about-company__swiper {
         grid-column: span 1;
@@ -2308,14 +2305,7 @@ ul {
         grid-column: span 1;
     }
 
-    .about-company__info {
-        grid-template-columns: repeat(12, 1fr);
-    }
-
-
-
-
-
+  
     .about-company__card-label {
         font-size: 20px;
     }
@@ -2338,30 +2328,23 @@ ul {
         overflow: visible;
     }
 
-    .about-company__info {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    
+.about-company__info-text h3 {
+  
+    font-size: 20px;
+   
 
-        gap: 12px;
-    }
-
-
-
-
-
-    .about-company__info-text {
-        font-size: 16px;
+}
+ .about-company__info-text {
+        font-size: 20px;
         line-height: 1.5;
+        row-gap: 16px;
     }
 
 
 }
 
-@media (max-width: 480px) {
-    .about-company__info::before {
-        background-size: cover;
-    }
-}
+
 
 /*---------- VBI (END)---------------------*/
 /*---------- AWARDS (START)---------------------*/
