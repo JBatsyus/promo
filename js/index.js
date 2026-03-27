@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             scrollTrigger: {
                 trigger: header,
                 toggleActions: "play none none reverse",
-                start: "top 80%",
+                start: "top 85%",
                 end: "top center",
                 // markers: true
             },
