@@ -2810,6 +2810,7 @@ ul {
     border-radius: 20px;
     position: relative;
     transition: 0.4s ease-in-out;
+    flex-shrink: 0;
 }
 
 .promo-form__switch-thumb::after {
