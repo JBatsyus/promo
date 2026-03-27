@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         speed: 600,
         loop: true,
         freeMode: true,
-        speed: 5000,
+        speed: 10000,
         autoplay: {
             delay: 0,
             disableOnInteraction: false,
