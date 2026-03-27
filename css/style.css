@@ -1600,11 +1600,11 @@ ul {
 }
 
 .task-card__title {
-    font-family: var(--color-yellow-base);
+    font-family: var(--font-family-base);
     font-weight: 600;
     font-size: 24px;
     line-height: 1.2;
-    color: var(--color-white);
+    color: var(--color-yellow-base);
     z-index: 2;
 }
 
