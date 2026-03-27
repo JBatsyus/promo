@@ -13,14 +13,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // });
     $(window).on('scroll', function () {
         let scrollDistance = $(window).scrollTop();
-        $('.section').each(function (i) {
-            if ($(this).offset().top - 100 <= scrollDistance) {
-                $('.nav__link').removeClass('nav__link--active');
+
+        $('.section').each(function () {
+            let sectionTop = $(this).offset().top - 100;
+            let sectionBottom = sectionTop + $(this).outerHeight();
+
+            if (scrollDistance >= sectionTop && scrollDistance < sectionBottom) {
                 let id = $(this).attr('id');
+                $('.nav__link').removeClass('nav__link--active');
                 $(`.nav__link[href="#${id}"]`).addClass('nav__link--active');
             }
         });
     });
+
 
 
     //вычисляем ширину экрана
@@ -266,7 +271,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         observer: true,
         observeParents: true,
         watchSlidesProgress: true,
-     
+
         navigation: {
             nextEl: ".promo-landing__arrow--next",
             prevEl: ".promo-landing__arrow--prev",
