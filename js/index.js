@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let scrollDistance = $(window).scrollTop();
 
         $('.section').each(function () {
-            let sectionTop = $(this).offset().top - 100;
+            let sectionTop = $(this).offset().top - 250;
             let sectionBottom = sectionTop + $(this).outerHeight();
 
             if (scrollDistance >= sectionTop && scrollDistance < sectionBottom) {
