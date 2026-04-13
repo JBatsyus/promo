@@ -353,7 +353,7 @@ ul {
 .gsap-block {
     will-change: transform, opacity;
     backface-visibility: hidden;
-    /* Убирает мерцание в Webkit */
+    
 }
 
 /* Шапка секций */
@@ -619,9 +619,7 @@ ul {
 .nav__link:hover,
 .nav__link--active {
     color: var(--color-yellow-base);
-    /* text-shadow:
-        0.5px 0 0 white,
-        -0.5px 0 0 white; */
+    
 }
 
 .header__btn {
@@ -843,7 +841,7 @@ ul {
 }
 
 .controls__arrow {
-    /* Сброс дефолтных стилей кнопки */
+
     padding: 0;
     border: none;
     background: none;

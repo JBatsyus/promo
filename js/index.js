@@ -1,16 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    // плавный скролл
-    // $("a.scroll-to").on("click", function (e) {
-    //     e.preventDefault();
-    //     let anchor = $(this).attr("href");
-    //     $("html, body")
-    //         .stop()
-    //         .animate({
-    //                 scrollTop: $(anchor).offset().top,
-    //             },
-    //             500,
-    //         );
-    // });
+
     $(window).on('scroll', function () {
         let scrollDistance = $(window).scrollTop();
 
@@ -27,11 +16,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
 
-
-    //вычисляем ширину экрана
     const windowWidth = window.screen.width;
 
-    // вычисление переменных ширины контейнера и экрана, передача их в css
     const container = document.querySelector(".container");
     const wrapper = document.querySelector(".wrapper");
     if (container && wrapper) {
@@ -122,7 +108,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 
-    // Инициализация Swiper
+   
     // Слайдер Конверсии
     const conversionSwiper = new Swiper(".conversion-block__swiper", {
         slidesPerView: 1.01,
@@ -301,7 +287,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             // Если скроллим вниз и мы не в самом низу, ИЛИ скроллим вверх и мы не в самом верху
             if ((delta > 0 && scrollTop + viewHeight < contentHeight) || (delta < 0 && scrollTop > 0)) {
-                e.stopPropagation(); // Останавливаем событие, чтобы страница не дергалась
+                e.stopPropagation(); 
             }
         }, {
             passive: false
@@ -398,22 +384,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             "-=0.5",
         ); // Накладывается на появление фона
 
-    // карточки Особенности
 
-    // gsap.from(".features__card", {
-    //     scrollTrigger: {
-    //         trigger: ".features__grid",
-    //         start: "top 80%",
-    //         toggleActions: "play reverse play reverse",
-    //     },
-    //     opacity: 0,
-    //     y: 30,
-    //     duration: 1.5,
-    //     stagger: 0.4,
-    //     ease: "power2.out"
-    // });
 
-    // --- Код для анимации стандартного заголовка (section-header) ---
+    // --- Анимации стандартного заголовка (section-header) ---
     gsap.utils.toArray(".section-header").forEach((header) => {
         // Анимация kicker
         const kicker = header.querySelector(".section-header__kicker");
@@ -456,22 +429,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             );
         }
     });
-    // gsap.utils.toArray('.gsap-block').forEach(block => {
-    //     gsap.from(block, {
-    //         scrollTrigger: {
-    //             trigger: block,
-    //             toggleActions: "play none none reverse",
-    //             start: "top 75%", // чуть позже заголовка для плавности потока
-    //         },
-    //         duration: 0.8,
-    //         opacity: 0,
-    //         y: 40,
-    //         ease: "power2.out",
-    //         force3D: true, // принудительно используем видеокарту
-    //         clearProps: "all"
-
-    //     });
-    // });
 
     // --- Анимация футера ---
     gsap.utils.toArray(".footer__column").forEach((col, i) => {
